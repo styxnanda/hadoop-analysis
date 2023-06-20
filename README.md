@@ -19,7 +19,7 @@
 | Althaf Nafi Anwar | |
 | Muhammad Suhaili | 2106731535 |
 | Satya Ananda Sulistio | 2106705524 |
-| Sulthan Satrya Y. D. | |
+| Sulthan Satrya Yudha Darmawan | 2106731560 |
 
 ## Instalasi Hadoop
 
