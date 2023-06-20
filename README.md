@@ -17,7 +17,7 @@
 | Nama | NPM |
 | :---: | :---: |
 | Althaf Nafi Anwar | |
-| Muhammad Suhaili | |
+| Muhammad Suhaili | 2106731535 |
 | Satya Ananda Sulistio | 2106705524 |
 | Sulthan Satrya Y. D. | |
 
@@ -75,3 +75,45 @@ Berikut adalah grafik hasil eksperimen yang telah dilakukan:
 ![Grafik Hasil Eksperimen](/resources/ExperimentResultFigure.png)
 
 ## Analisis Hasil Eksperimen
+
+Bila terlihat dari tabel dan grafik hasil eksperimen diatas, besar rasio yang dihasilkan adalah **seiring dengan bertambahnya size dataset menjadi semakin menurun secara signifikan**. Dalam hal ini, rasio yang awalnya 183.01 menjadi 40.05 dan semakin mengecil lagi hingga 0.85. Untuk memahami fenomena ini, pertama-tama perlu dipahami dulu bagaimana hadoop mapreduce bekerja.
+
+![How Hadoop Map Reduce Works](/resources/MapReduceDiagram.png) 
+
+Dengan mengacu pada ilustrasi yang didapatkan dari [sumber](https://phoenixnap.com/kb/hadoop-mapreduce#:~:text=MapReduce%20assigns%20fragments%20of%20data,handling%20even%20petabytes%20of%20data), hadoop map reduce bekerja dengan beberapa tahap, yaitu :
+
+1.  **Mapping** 
+
+    Dalam tahap ini, data sets akan dibagi ke dalam beberapa hadoop cluster atau node. Pada contoh diatas, data sets dibagi ke dalam 3 cluster yang masing-masing nya bekerja secara independen atau paralel sehingga tidak ada komunikasi antar cluster.
+
+    Pada kasus ini, hadoop digunakan untuk menghitung frekuensi kemunculan huruf yang ada pada data. Maka dari itu, dibuat pasangan **<key, value>** yang menunjukkan berapa kali kata tersebut muncul pada node tersebut.
+
+2. **Shuffle**
+
+    Output dari setiap node kemudian digabungkan dalam tahap ini dan di sortir sehingga terlihat total kemunculan setiap huruf pada keseluruhan node. Pada contoh ini, kata _apache_ muncul sebanyak 7 pada node pertama dan 15 pada node ketiga.
+
+3. **Reduce**
+
+    Akhirnya, hasil dari tahap shuffle dikelompokkan menjadi final output yang secara default akan disimpan dalam HDFS. Pada contoh ini, total kemunculan kata _apache_ dijumlahkan dan digabungkan pada final output bersama kata-kata lainnya.
+
+***Bagaimana cara kerja dari hadoop map reduce berpengaruh dengan eksperimen yang sudah dilakukan?***
+
+Tentunya hal ini sangat berpengaruh. Sebagai contoh, pada file 1MB yang digunakan pada eksperimen diatas, data pada file tersebut harus melalui langkah-langkah dari hadoop mapreduce walaupun hanya berukuran sebesar 1MB. Akhirnya, proses dari mapreduce akan sangat _membuang waktu_ dan mengakibatkan output waktu menjadi lebih lama dibandingkan dengan tidak menggunakan map reduce.
+
+Untuk lebih mudah dipahami, kasus ini dapat diibaratkan sebagai pengiriman paket dengan rincian:  A ingin mengirimkan paket ke rumah B dari rumahnya dimana jarak dari rumah A dan rumah B hanya berjarak 1 blok. Umpamakan jarak dari kedua rumah adalah _size dari file_ yang akan diproses. 
+
+- Bila tidak menggunakan hadoop mapreduce : pengiriman paket dapat langsung dilakukan dengan mengirimkan nya secara jalan kaki dari rumah A ke rumah B.
+
+- Bila menggunakan hadooop mapreduce : pengiriman paket harus melalui pelayanan kurir yang akan menyortir paket tersebut pada kantor kurir kemudian paket baru diantar oleh kurir ke rumah B.
+
+Dapat terlihat bahwa tidak menggunakan kurir lebih efektif daripada menggunakan kurir.
+
+***Apakah penggunaan hadoop mapreduce menjadi tidak efektif sama sekali?***
+
+![Hadoop Explained](/resources/MapReduceDefinition.png) 
+
+Dengan mengacu pada definisi diatas yang didapatkan dari [halaman resmi hadoop](https://hadoop.apache.org/), hadoop merupakan framework yang dilakukan untuk melakukan processing **data sets yang besar**. Dengan demikian, hadoop mapreduce memang tujuannya di desain untuk melakukan hal tersebut. Hal ini disebabkan untuk file yang berukuran besar, maka untuk _task_ menghitung kata, akan lebih efektif untuk melakukan proses secara paralel dibandingkan dengan cara biasa yang memproses kata secara satu per satu. Sehingga, hadoop mapreduce memang **tidak cocok digunakan untuk file yang berukuran kecil dan ditujukan untuk file yang berukuran besar.**
+
+
+
+
