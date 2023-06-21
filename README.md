@@ -81,6 +81,8 @@ Tambahkan system Variable baru bernama ```JAVA_HOME``` dan arahkan ke instalasi 
 
 ### 9. Edit ```hdfs-site.xml``` ```(/etc/hadoop)```
 
+![hdfs_site](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/hdfs-site.png)
+
 ### 10. Edit ```hadoop-env.cmd```
 - Edit ```hadoop-env.cmd``` dengan memastikan sudah mengarah ke directory Java
 
