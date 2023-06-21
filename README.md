@@ -21,6 +21,8 @@
 | Satya Ananda Sulistio | 2106705524 |
 | Sulthan Satrya Yudha Darmawan | 2106731560 |
 
+---
+
 ## Instalasi Hadoop
 ### 1. Download Prerequisities
 Terdapat beberapa prerequisite yang perlu di-download untuk menginstall hadoop, diantaranya:
@@ -122,6 +124,7 @@ Tambahkan system Variable baru bernama ```JAVA_HOME``` dan arahkan ke instalasi 
 
 ![FormatNameNode2](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/FormatNameNode2.png)
 
+---
 
 ## Menjalankan Hadoop dan Word Count
 
