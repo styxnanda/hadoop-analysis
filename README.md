@@ -26,71 +26,98 @@
 Terdapat beberapa prerequisite yang perlu di-download untuk menginstall hadoop, diantaranya:
 - [Java 8](https://www.oracle.com/id/java/technologies/javase/javase8-archive-downloads.html) 
  (Recommended) / [Java 11](https://www.oracle.com/id/java/technologies/javase/jdk11-archive-downloads.html)
+
 ![DownloadPrerequisities1](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/DownloadPrerequisities1.png) 
+
 - [Hadoop](https://archive.apache.org/dist/hadoop/common/)
+
 ![DownloadPrerequisities2](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/DownloadPrerequisities2.png)
+
 - [Additional Binaries ](https://github.com/cdarlint/winutils)(Sesuaikan versi Hadoop, binary terbaru hanya sampai v3.2.2)
+
 ![DownloadPrerequisities3](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/DownloadPrerequisities3.png)
 
 ### 2. Configure System Variables: JAVA_HOME
 Tambahkan system Variable baru bernama ```JAVA_HOME``` dan arahkan ke instalasi Java
+
 ![JAVA_HOME](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/JAVA_HOME.png)
 
 ### 3. Configure New Path Variable
 - Klik Edit
+
 ![NPV1](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/NPV1.png)
+
 - Tambahkan Path baru ke directory Java, lalu arahkan ke folder bin di dalamnya
+
 ![NPV2](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/NPV2.png)
+
 - Lakukan verifikasi Java JDK
+
 ![NPV3](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/NPV3.png)
 
 ### 4. Extract Hadoop targ.gz File (as Admin)
+
 ![targz1](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/targz1.png)
+
 ![targz2](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/targz2.png)
 
 ### 5. Edit ```core-site.xml``` ```(/etc/hadoop)```
+
 ![core-site1](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/core-site1.png)
+
 ![core-site2](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/core-site2.png)
 
 ### 6. Edit ```mapred-site.xml``` ```(/etc/hadoop)```
+
 ![mapred-site](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/mapred-site.png)
 
 ### 7. Edit ```yarn-site.xml``` ```(/etc/hadoop)```
+
 ![yarn-site](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/yarn-site.png)
 
 ### 8. Create 'data' directory and Sub-Directories
-![datadir1](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/datadir1.png) ---> ![datadir2](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/datadir2.png)
+
+![datadir1](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/datadir1.png) ➡️ ![datadir2](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/datadir2.png)
 
 ### 9. Edit ```hdfs-site.xml``` ```(/etc/hadoop)```
 
 ### 10. Edit ```hadoop-env.cmd```
 - Edit ```hadoop-env.cmd``` dengan memastikan sudah mengarah ke directory Java
+
 ![hadoop-env](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/hadoop-env.png)
 
 ### 11. Create ```HADOOP_HOME``` System Variable
 - Buatlah System Variable baru bernama ```HADOOP_HOME```
+
 ![HADOOP_HOME1](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/HADOOP_HOME1.png)
 
 - Lalu arahkan ke directory hadoop
+
 ![HADOOP-HOME2](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/HADOOP_HOME2.png)
 
 ### 12. Create Path Variable for ```/bin``` and ```/sbin```
+
 ![PVbin](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/PVbin.png)
 
 ### 13. Download Additional Binaries (Suit Ver.)
 - Download folder dengan versi Hadoop yang sesuai. Update terakhir baru mencapai versi **3.3.2**
+
 ![PVbin](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/PVbin.png)
 
 ### 14. Move Binaries to Local ```/bin```
+
 ![MoveBinaries](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/MoveBinaries.png)
 
 ### 15. Verify if Hadoop is Installed Correctly
 - Lakukan verifikasi untuk mengetahui apakah Hadoop sudah terinstall secara benar dengan memberikan *command* ```hadoop version``` pada *command prompt*
+
 ![VerifyHadoop](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/VerifyHadoop.png)
 
 ### 16. Format the namenode Folder
 - Lakukan format untuk namenode Folder dengan cara sebagai berikut:
+
 ![FormatNameNode1](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/FormatNameNode1.png)
+
 ![FormatNameNode2](https://github.com/styxnanda/hadoop-analysis/blob/main/resources/Install%20Hadoop/FormatNameNode2.png)
 
 
