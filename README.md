@@ -86,6 +86,7 @@ Masukkan ke dalam `core-site.xml`:
 ### 6. Edit `mapred-site.xml` `(/etc/hadoop)`
 
 ![mapred-site](/resources/Install%20Hadoop/mapred-site.png)
+
 Masukkan ke dalam `mapred-site.xml`:
 ```xml
 <configuration>
