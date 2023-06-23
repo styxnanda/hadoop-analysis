@@ -74,6 +74,7 @@ Tambahkan system Variable baru bernama `JAVA_HOME` dan arahkan ke instalasi Java
 ![core-site2](/resources/Install%20Hadoop/core-site2.png)
 
 Masukkan ke dalam `core-site.xml`:
+
 ```xml
 <configuration>
   <property>
@@ -88,6 +89,7 @@ Masukkan ke dalam `core-site.xml`:
 ![mapred-site](/resources/Install%20Hadoop/mapred-site.png)
 
 Masukkan ke dalam `mapred-site.xml`:
+
 ```xml
 <configuration>
   <property>
@@ -102,6 +104,7 @@ Masukkan ke dalam `mapred-site.xml`:
 ![yarn-site](/resources/Install%20Hadoop/yarn-site.png)
 
 Masukkan ke dalam `yarn-site.xml`:
+
 ```xml
 <configuration>
   <property>
@@ -124,6 +127,7 @@ Masukkan ke dalam `yarn-site.xml`:
 ![hdfs_site](/resources/Install%20Hadoop/hdfs-site.png)
 
 Masukkan ke dalam `hdfs-site.xml` (ubah value ke path subdirectory datanode dan namenode yang telah dibuat di tahap sebelumnya):
+
 ```xml
 <configuration>
   <property>
@@ -182,9 +186,11 @@ Masukkan ke dalam `hdfs-site.xml` (ubah value ke path subdirectory datanode dan 
 - Lakukan format untuk namenode Folder dengan cara sebagai berikut:
 
 ![FormatNameNode1](/resources/Install%20Hadoop/FormatNameNode1.png)
+
 ```cmd
 hdfs namenode -format
 ```
+
 Akan berakhir dengan tampilan seperti berikut:
 
 ![FormatNameNode2](/resources/Install%20Hadoop/FormatNameNode2.png)
@@ -195,7 +201,10 @@ Akan berakhir dengan tampilan seperti berikut:
 
 ### Menjalankan Hadoop
 
-Arahkan working directory ke `/hadoop/sbin` dan jalankah perintah untuk menjalankan Hadoop
+Arahkan working directory ke `/hadoop/sbin` dan jika dilihat menggunakan file explorer ataupun terminal, seharusnya terlihat sebuah list file seperti di bawah
+![ScriptsFolder](/resources/Run%20Hadoop/scripts.png)
+
+Untuk menjalankan Hadoop gunakan perintah berikut
 
 ```cmd
 cd /hadoop/sbin
@@ -237,9 +246,12 @@ Hadoop yang berjalan dengan lancar akan memiliki 4 daemon yang berjalan (ditampi
 - DataNode
 - NameNode
 
-Hadoop juga memiliki GUI di `localhost:9870` dan `localhost:8088`.
+Hadoop juga memiliki GUI di `localhost:9870` dan `localhost:8088` yang dapat dilihat pada kedua gambar di bawah
+![GUI9870](/resources/Run%20Hadoop/gui_9870.png)
+`localhost:9870` dikhususkan untuk HDFS (File system Hadoop)
+![GUI8088](/resources/Run%20Hadoop/gui_8088.png)
 
-`localhost:9870` dikhususkan untuk HDFS (File system Hadoop), sedangkan `localhost:8088` dikhususkan untuk YARN (Tracking job Hadoop oleh YARN).
+Sedangkan `localhost:8088` dikhususkan untuk YARN (Tracking job Hadoop oleh YARN).
 
 ### Menjalankan Program Word Count dengan Hadoop MapReduce
 
