@@ -202,6 +202,7 @@ Akan berakhir dengan tampilan seperti berikut:
 ### Menjalankan Hadoop
 
 Arahkan working directory ke `/hadoop/sbin` dan jika dilihat menggunakan file explorer ataupun terminal, seharusnya terlihat sebuah list file seperti di bawah
+
 ![ScriptsFolder](/resources/Run%20Hadoop/scripts.png)
 
 Untuk menjalankan Hadoop gunakan perintah berikut
@@ -247,8 +248,11 @@ Hadoop yang berjalan dengan lancar akan memiliki 4 daemon yang berjalan (ditampi
 - NameNode
 
 Hadoop juga memiliki GUI di `localhost:9870` dan `localhost:8088` yang dapat dilihat pada kedua gambar di bawah
+
 ![GUI9870](/resources/Run%20Hadoop/gui_9870.png)
+
 `localhost:9870` dikhususkan untuk HDFS (File system Hadoop)
+
 ![GUI8088](/resources/Run%20Hadoop/gui_8088.png)
 
 Sedangkan `localhost:8088` dikhususkan untuk YARN (Tracking job Hadoop oleh YARN).
